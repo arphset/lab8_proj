@@ -1,0 +1,274 @@
+/* === ПЕРЕМЕННЫЕ (Настройки цветов) === */
+:root {
+    --primary: #4F46E5;       /* Основной фиолетовый */
+    --primary-hover: #4338CA; /* Цвет при наведении */
+    --secondary: #10B981;     /* Зеленый для акцентов */
+    --dark: #111827;          /* Почти черный текст */
+    --gray: #6B7280;          /* Серый текст */
+    --light-bg: #F3F4F6;      /* Светлый фон страницы */
+    --white: #FFFFFF;
+    --border: #E5E7EB;
+    --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    --radius: 12px;
+}
+
+/* === БАЗОВЫЕ СТИЛИ === */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--light-bg);
+    color: var(--dark);
+    line-height: 1.5;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+a { text-decoration: none; color: inherit; }
+ul { list-style: none; }
+
+/* === ШАПКА === */
+.header {
+    background: var(--white);
+    box-shadow: var(--shadow);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 70px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--primary);
+  }
+
+.logo-icon { margin-right: 8px; font-size: 28px; }
+
+.nav { display: flex; align-items: center; gap: 30px; }
+.nav-link { font-weight: 500; color: var(--gray); transition: color 0.2s; }
+.nav-link:hover { color: var(--primary); }
+.nav-link.active { color: var(--dark); }
+
+.btn-outline {
+    border: 2px solid var(--primary);
+    padding: 8px 20px;
+    border-radius: 8px;
+    color: var(--primary) !important;
+}
+.btn-outline:hover { background: var(--primary); color: var(--white) !important; }
+
+/* === ГЕРОЙ (ВЕРХНИЙ БЛОК) === */
+.hero {
+    text-align: center;
+    padding: 80px 0 40px;
+}
+
+.hero-title {
+    font-size: 48px;
+    font-weight: 800;
+    line-height: 1.2;
+    margin-bottom: 20px;
+}
+
+.highlight {
+    color: var(--primary);
+    position: relative;
+}
+/* Подчеркивание под словом "мечты" */
+.highlight::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 100%;
+    height: 8px;
+    background: rgba(79, 70, 229, 0.2);
+    border-radius: 4px;
+}
+
+.hero-subtitle {
+    font-size: 18px;
+    color: var(--gray);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* === КОНТЕНТ (СЕТКА) === */
+.content { padding: 40px 0 80px; }
+
+.content-grid {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr; /* Форма шире, инфо уже */
+    gap: 40px;
+    align-items: start;
+}
+
+/* === КАРТОЧКА ФОРМЫ === */
+.card {
+    background: var(--white);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-lg);
+    padding: 40px;
+    border: 1px solid var(--border);
+}
+
+.card-header { margin-bottom: 30px; text-align: center; }
+.card-header h2 { font-size: 24px; margin-bottom: 8px; }
+.card-header p { color: var(--gray); font-size: 14px; }
+
+/* === ЭЛЕМЕНТЫ ФОРМЫ === */
+.form-group { margin-bottom: 20px; }
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+    font-size: 14px;
+    color: var(--dark);
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 12px 16px;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    font-size: 16px;
+    font-family: inherit;
+    transition: all 0.2s;
+    background: #FAFAFA;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--primary);
+    background: var(--white);
+    box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.1);
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.btn-primary {
+    width: 100%;
+      padding: 14px;
+    background: var(--primary);
+    color: var(--white);
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.2s, background 0.2s;
+    box-shadow: 0 4px 12px rgba(79, 70, 229, 0.3);
+}
+
+.btn-primary:hover {
+    background: var(--primary-hover);
+    transform: translateY(-2px);
+}
+
+/* === РЕЗУЛЬТАТ AJAX === */
+.result-box {
+    margin-top: 20px;
+    padding: 15px;
+    border-radius: 8px;
+    text-align: center;
+    display: none;
+}
+.result-box.success {
+    display: block;
+    background: #ECFDF5;
+    border: 1px solid #A7F3D0;
+    color: #065F46;
+}
+.result-box.error {
+    display: block;
+    background: #FEF2F2;
+    border: 1px solid #FECACA;
+    color: #991B1B;
+}
+
+/* === ПРАВАЯ КОЛОНКА (INFO) === */
+.info-panel h3 {
+    font-size: 24px;
+    margin-bottom: 30px;
+}
+
+.feature-item {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 25px;
+    background: var(--white);
+    padding: 20px;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    transition: transform 0.2s;
+}
+.feature-item:hover { transform: translateY(-3px); }
+
+.feature-icon {
+    font-size: 24px;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #EEF2FF;
+    border-radius: 12px;
+    flex-shrink: 0;
+}
+
+.feature-text h4 { font-size: 16px; margin-bottom: 4px; }
+.feature-text p { font-size: 14px; color: var(--gray); line-height: 1.4; }
+
+/* === ФУТЕР === */
+.footer {
+    background: var(--dark);
+    color: #9CA3AF;
+    padding: 40px 0;
+    margin-top: auto;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer-links a { margin-left: 20px; font-size: 14px; }
+.footer-links a:hover { color: var(--white); }
+
+/* === АДАПТИВНОСТЬ (МОБИЛЬНЫЕ) === */
+@media (max-width: 768px) {
+    .hero-title { font-size: 32px; }
+    .content-grid { grid-template-columns: 1fr; }
+    .form-row { grid-template-columns: 1fr; }
+    .nav { display: none; /* Для простоты скрываем меню на моб */ }
+    .footer-content { flex-direction: column; gap: 20px; text-align: center; }
+    .footer-links a { margin: 0 10px; }
+}
