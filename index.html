@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TutorMatch — Найди идеального репетитора</title>
+    <!-- Подключаем современные шрифты -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Шапка сайта -->
+    <header class="header">
+        <div class="container header-content">
+            <div class="logo">
+                <span class="logo-icon">🎓</span>
+                <span class="logo-text">TutorMatch</span>
+            </div>
+            <nav class="nav">
+                <a href="#" class="nav-link active">Главная</a>
+                <a href="#how-it-works" class="nav-link">Как это работает</a>
+                <a href="edit.php" class="nav-link btn-outline">Войти</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Основной контент -->
+    <main>
+        <!-- Блок-герой (Заголовок) -->
+        <section class="hero">
+            <div class="container">
+                <h1 class="hero-title">Найдите репетитора <br> <span class="highlight">мечты</span> за 5 минут</h1>
+                <p class="hero-subtitle">Оставьте заявку, и мы подберем идеального преподавателя под ваши цели и бюджет</p>
+            </div>
+        </section>
+
+        <!-- Секция с формой и информацией -->
+        <section class="content" id="how-it-works">
+            <div class="container content-grid">
+
+                <!-- Левая колонка: Форма -->
+                <div class="card form-card">
+                    <div class="card-header">
+                        <h2>Оставить заявку</h2>
+                        <p>Заполните форму, и мы свяжемся с вами</p>
+                    </div>
+
+                    <form id="requestForm" class="form">
+                        <div class="form-group">
+                            <label for="name">Ваше имя</label>
+                            <input type="text" id="name" name="name" placeholder="Иван Иванов" required>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="phone">Телефон</label>
+                                <input type="tel" id="phone" name="phone" placeholder="+7 (999) 123-45-67" required>
+                                                            </div>
+                            <div class="form-group">
+                                <label for="email">Email</label>
+                                <input type="email" id="email" name="email" placeholder="ivan@mail.ru" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="subject">Предмет</label>
+                            <select id="subject" name="subject">
+                                <option value="" disabled selected>Выберите предмет</option>
+                                <option value="math">📐 Математика</option>
+                                <option value="english">🇬🇧 Английский язык  </option>
+                                <option value="physics">⚛️ Физика</option>
+                                <option value="chemistry">🧪 Химия </option>
+                                <option value="russian"> Русский язык</option>
+                                <option value="history">🏛️ История </option>
+                                <option value="programming">💻 Программирование</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="wishes">Пожелания</label>
+                            <textarea id="wishes" name="wishes" rows="3" placeholder="Например: подготовка к ЕГЭ, занятия онлайн, опыт от 3 лет..."></textarea>
+                        </div>
+
+                        <button type="submit" class="btn-primary">Подобрать репетитора</button>
+                    </form>
+
+                    <!-- Блок для вывода результата (AJAX) -->
+                    <div id="apiResult" class="result-box"></div>
+                </div>
+
+                <!-- Правая колонка: Преимущества -->
+                <div class="info-panel">
+                    <h3>Почему выбирают нас?</h3>
+
+                    <div class="feature-item">
+                        <div class="feature-icon"></div>
+                        <div class="feature-text">
+                            <h4>Умный подбор</h4>
+                            <p>Анализируем более 50 параметров, чтобы найти идеального педагога</p>
+                        </div>
+                    </div>
+
+                    <div class="feature-item">
+                        <div class="feature-icon">⏱️</div>
+                        <div class="feature-text">
+                            <h4>Быстрый старт</h4>
+                            <p>Первое занятие может состояться уже завтра</p>
+                        </div>
+                    </div>
+
+                    <div class="feature-item">
+                        <div class="feature-icon">🛡️ </div>
+                        <div class="feature-text">
+                            <h4>Гарантия качества</h4>
+                            <p>Если преподаватель не подошел — заменим бесплатно</p>
+                        </div>
+                    </div>
+                                        <div class="feature-item">
+                        <div class="feature-icon"></div>
+                        <div class="feature-text">
+                            <h4>Безопасно</h4>
+                            <p>Все данные защищены и не передаются третьим лицам</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Футер -->
+    <footer class="footer">
+        <div class="container footer-content">
+            <p>&copy; 2026 TutorMatch. Сервис подбора репетиторов.</p>
+            <div class="footer-links">
+                <a href="#">Политика конфиденциальности</a>
+                <a href="fallback.php">Версия без JS</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
